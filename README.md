@@ -23,8 +23,10 @@ List of URLs
 $docker compose up nodejs-api-test --abort-on-container-exit
 ```
 
-## 3. API Testing with Jest and SuperTest
+## 3. API Testing with [Jest](https://jestjs.io/) and [SuperTest](https://www.npmjs.com/package/supertest)
 ```
+$cd nodejs
+
 $npm test                    # Run all tests
 $npm test product_test.js    # Run integration tests only
 $npm test product.unit.test.js # Run unit tests only
