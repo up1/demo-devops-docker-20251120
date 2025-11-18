@@ -11,6 +11,14 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@opentelemetry/api": "^1.9.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.67.0",
+    "@opentelemetry/instrumentation-express": "^0.57.0",
+    "@opentelemetry/instrumentation-http": "^0.208.0",
+    "@opentelemetry/instrumentation-mysql2": "^0.55.0",
+    "@opentelemetry/sdk-metrics": "^2.2.0",
+    "@opentelemetry/sdk-node": "^0.208.0",
+    "@opentelemetry/sdk-trace-node": "^2.2.0",
     "express": "^5.1.0",
     "ioredis": "^5.8.2",
     "mysql2": "^3.15.3"
