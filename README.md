@@ -22,3 +22,7 @@ List of URLs
 ```
 $docker compose up nodejs-api-test --abort-on-container-exit
 ```
+
+## 3. API Testing with Jest and SuperTest
+```
+```
