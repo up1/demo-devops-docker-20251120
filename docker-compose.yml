@@ -11,6 +11,11 @@ services:
       - DB_NAME=products_db
       - REDIS_HOST=redis
       - REDIS_PORT=6379
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"] 
+      interval: 5s
+      timeout: 5s
+      retries: 5
     depends_on:
       mysql:
         condition: service_healthy
@@ -39,3 +44,17 @@ services:
       interval: 5s
       timeout: 5s
       retries: 3
+
+  nodejs-api-test:
+    image: postman/newman:alpine
+    tty: true
+    stdin_open: true
+    command:
+      run nodejs.postman_collection.json -k
+      -r cli,junit
+      --reporter-junit-export="reports/results.xml"
+    volumes:
+      - ./postman/:/etc/newman
+    depends_on:
+      nodejs:
+        condition: service_healthy
