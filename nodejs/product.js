@@ -25,7 +25,14 @@ async function getProductById(productId) {
 
   try {
     // Try to get from cache first
-    const cachedProduct = await getProductCache(productId);
+    let cachedProduct = null;
+    
+    try {
+      cachedProduct = await getProductCache(productId);
+    } catch (cacheError) {
+      // Log cache error but continue to database
+      console.warn(`Cache error for product ${productId}:`, cacheError.message);
+    }
     
     if (cachedProduct) {
       return cachedProduct;
@@ -38,8 +45,13 @@ async function getProductById(productId) {
       return null; // Product not found
     }
 
-    // Save to cache for next time
-    await setProductCache(dbProduct);
+    // Try to save to cache for next time
+    try {
+      await setProductCache(dbProduct);
+    } catch (cacheError) {
+      // Log cache error but don't fail the request
+      console.warn(`Cache set error for product ${productId}:`, cacheError.message);
+    }
 
     return dbProduct;
 

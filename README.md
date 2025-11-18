@@ -25,4 +25,7 @@ $docker compose up nodejs-api-test --abort-on-container-exit
 
 ## 3. API Testing with Jest and SuperTest
 ```
+$npm test                    # Run all tests
+$npm test product_test.js    # Run integration tests only
+$npm test product.unit.test.js # Run unit tests only
 ```

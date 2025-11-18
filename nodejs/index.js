@@ -50,6 +50,12 @@ app.get('/health', (req, res) => {
   res.status(200).send('OK');
 });
 
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
+// Export app for testing
+module.exports = app;
+
+// Only start server if this file is run directly
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`);
+  });
+}
