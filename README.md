@@ -33,8 +33,10 @@ $npm test product.unit.test.js # Run unit tests only
 ```
 
 ## 4. Observability of service :: Distributed tracing
+* [OpenTelemetry](https://opentelemetry.io/)
+* [Jaeger](https://www.jaegertracing.io/)
 
-Install
+Install dependencies
 ```
 $npm install @opentelemetry/sdk-node \
   @opentelemetry/api \
