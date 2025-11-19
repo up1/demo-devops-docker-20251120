@@ -90,3 +90,7 @@ $docker compose ps
 
 Access to prometheus = http://localhost:9090
 * Go to menu Status => Targets health
+
+### Working with [Prometheus Exporters and integrations](https://prometheus.io/docs/instrumenting/exporters/)
+* MySQL
+* Redis
