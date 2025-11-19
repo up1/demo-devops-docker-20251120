@@ -79,6 +79,9 @@ Install dependencies
 $npm install @matteodisabatino/express-prometheus-middleware
 ```
 
+List of URLs
+* http://localhost:3000/metrics
+
 Start prometheus
 ```
 $docker compose up -d prometheus

@@ -1,9 +1,14 @@
 // index.js
 const express = require('express');
 const { getProductById } = require('./product');
+const { ExpressPrometheusMiddleware } = require('@matteodisabatino/express-prometheus-middleware')
 
 const app = express();
 const PORT = 3000;
+
+// Prometheus middleware for metrics
+const epm = new ExpressPrometheusMiddleware()
+app.use(epm.handler);
 
 /**
  * GET /products/:id - Get product details by ID with Redis caching.
