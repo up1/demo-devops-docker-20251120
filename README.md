@@ -69,3 +69,16 @@ List of URLs
 
 Access to Jaeger server again !!
 * http://localhost:16686
+
+## 5. Observability of service :: Application metric
+* [Prometheus](https://prometheus.io/)
+* [Grafana](https://grafana.com/)
+
+Start prometheus
+```
+$docker compose up -d prometheus
+$docker compose ps
+```
+
+Access to prometheus = http://localhost:9090
+* Go to menu Status => Targets health
