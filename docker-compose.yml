@@ -12,7 +12,7 @@ services:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - OTEL_SERVICE_NAME=nodejs-product-service
-      - OTEL_EXPORTER_OTLP=http://otel-collector:4317/v1/traces
+      - OTEL_EXPORTER_OTLP=http://jaeger:4317/v1/traces
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/health"] 
       interval: 5s
@@ -61,9 +61,15 @@ services:
       nodejs:
         condition: service_healthy
   
-  otel-collector:
-    image: grafana/otel-lgtm
+  # otel-collector:
+  #   image: grafana/otel-lgtm
+  #   ports:
+  #     - "4317:4317"
+  #     - "4318:4318"
+  #     - "4000:3000"
+  jaeger:
+    image: jaegertracing/all-in-one:latest
     ports:
-      - "4317:4317"
-      - "4318:4318"
-      - "4000:3000"
+      - 16686:16686
+      # - 4317:4317
+      # - 4318:4318

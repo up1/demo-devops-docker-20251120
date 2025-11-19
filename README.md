@@ -46,19 +46,24 @@ $npm install @opentelemetry/instrumentation-http @opentelemetry/instrumentation-
 $npm install @opentelemetry/instrumentation-mysql2
 ```
 
-Start [LGTM Stack](https://hub.docker.com/r/grafana/otel-lgtm)
+Start [Jaeger](https://www.jaegertracing.io/)
 ```
-$docker compose up -d otel-collector
+$docker compose up -d jaeger
+$docker compose ps
 ```
+
+Access to Jaeger server
+* http://localhost:16686
 
 Start NodeJS Service
 ```
-$docker compose up -d --build
+$docker compose up -d nodejs --build
+$docker compose ps
 ```
 
 List of URLs
 * http://localhost:3000/products/1
 * http://localhost:3000/products/4
 
-Access to Grafana
-* http://localhost:4000
+Access to Jaeger server again !!
+* http://localhost:16686
