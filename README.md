@@ -74,6 +74,11 @@ Access to Jaeger server again !!
 * [Prometheus](https://prometheus.io/)
 * [Grafana](https://grafana.com/)
 
+Install dependencies
+```
+$npm install @matteodisabatino/express-prometheus-middleware
+```
+
 Start prometheus
 ```
 $docker compose up -d prometheus
