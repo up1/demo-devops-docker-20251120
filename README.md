@@ -36,7 +36,7 @@ $npm test product.unit.test.js # Run unit tests only
 * [OpenTelemetry](https://opentelemetry.io/)
 * [Jaeger](https://www.jaegertracing.io/)
 
-Install dependencies
+Install dependencies for [NodeJS](https://opentelemetry.io/docs/languages/js/getting-started/nodejs/)
 ```
 $npm install @opentelemetry/sdk-node \
   @opentelemetry/api \
